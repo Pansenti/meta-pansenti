@@ -10,7 +10,7 @@ BBLAYERS ?= " \
   /home/scott/poky-dylan/meta-yocto \
   /home/scott/poky-dylan/meta-gumstix \
   /home/scott/poky-dylan/meta-beagleboard/common-bsp \
-  /home/scott/pansenti/meta-pansenti \
+  /home/scott/poky-dylan/meta-pansenti \
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \
