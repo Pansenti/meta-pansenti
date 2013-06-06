@@ -20,7 +20,7 @@ fi
 
 if [[ -z "${MACHINE}" ]]; then
 	echo "Environment variable MACHINE not found!"
-	echo "Example: export MACHINE=overo or export MACHINE=duovero"
+	echo "Choices are overo|duovero|beaglebone"
 	exit 1
 else
 	echo -e "MACHINE: $MACHINE\n"
