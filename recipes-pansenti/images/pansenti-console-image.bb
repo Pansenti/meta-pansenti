@@ -101,6 +101,10 @@ MISC_EXTRA_overo = " \
     polladc \
  "
 
+MISC_EXTRA_beaglebone = " \
+    board-setup \
+ "
+
 IMAGE_INSTALL += " \
     ${CORE_OS} \
     ${DEV_SDK_INSTALL} \
