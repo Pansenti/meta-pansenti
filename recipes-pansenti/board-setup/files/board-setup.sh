@@ -33,12 +33,21 @@ init_adc() {
     fi
 }
 
+
+init_serial() {
+    if [ ! -f /dev/ttyO1 ]; then
+        echo BB-UART1 > /sys/devices/bone_capemgr.9/slots
+    fi
+}
+
 case "$1" in
     start)
         echo "Initializing gpio pins"
         init_gpio
         echo "Initializing adc pins"
         init_adc
+        echo "Initializing serial port /dev/ttyO1"
+        init_serial
         ;;
 
     *)
