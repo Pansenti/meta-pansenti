@@ -13,7 +13,7 @@ This layer depends on:
         URI: git://github.com/beagleboard/meta-beagleboard.git
         branch: master
         revision: HEAD
-        commit: 197260d
+        commit: b81ea32
 
         meta-pansenti layer maintainer: Scott Ellis <scott@pansenti.com>
 
