@@ -9,10 +9,18 @@ case "$START_CAMERA" in
                 ;;
 esac
 
+if [ ! -f /usr/bin/SyntroV4LCamera ]; then
+    exit 0
+fi
+
 start_camera() {
-    if [ -f /usr/bin/SyntroV4LCamera ]; then
-        /usr/bin/SyntroV4LCamera -s/home/root/SyntroV4LCamera.ini -c -d
+    if [ ! -d /home/root/syntro ]; then
+        mkdir /home/root/syntro
     fi
+
+    cd /home/root/syntro
+
+    /usr/bin/SyntroV4LCamera -s/home/root/syntro/SyntroV4LCamera.ini -c -d    
 }
 
 case "$1" in

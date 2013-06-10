@@ -7,7 +7,7 @@ SRC_URI = "file://init.d/camera-start.sh \
            file://default/camera-start \
           "
 
-PR = "0"
+PR = "2"
 
 S = "${WORKDIR}"
 
