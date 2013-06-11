@@ -17,7 +17,7 @@ PSPLASH = "psplash"
 PSPLASH_overo = ""
 
 SYNTRO = " \
-    camera-start \
+    camera \
     syntrocore \
     syntrocore-dev \
     syntrolcam \

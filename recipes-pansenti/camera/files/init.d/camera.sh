@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -r /etc/default/camera-start ] && . /etc/default/camera-start
+[ -r /etc/default/camera ] && . /etc/default/camera
 
 
 case "$START_CAMERA" in
@@ -43,7 +43,7 @@ case "$1" in
         ;;
 
     *)
-        echo "Usage: /etc/init.d/camera-start.sh {start|stop|restart}"
+        echo "Usage: /etc/init.d/camera.sh {start|stop|restart}"
         exit 2
 esac
 
