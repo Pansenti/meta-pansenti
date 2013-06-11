@@ -7,13 +7,12 @@ inherit qt4e
 
 DEPENDS += "pkgconfig"
 
-PR = "6"
+PR = "7"
 
-SRC_URI = "ftp://www.pansenti.com/syntro/SyntroCore-${PV}.tar.bz2"
-SRC_URI[md5sum] = "86cdb508aaebc28f2c5496113286b31e"
-SRC_URI[sha256sum] = "4e73063b1c22371ec596eeec6c7faaea4cf4c818d8470a94461cd05857ce0c09"
+SRCREV = "${AUTOREV}"
+SRC_URI = "git://github.com/Syntro/SyntroCore.git"
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/git"
 
 do_install() {
     export INSTALL_ROOT=${D}
