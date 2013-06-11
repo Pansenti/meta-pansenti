@@ -20,7 +20,7 @@ SYNTRO = " \
     camera-start \
     syntrocore \
     syntrocore-dev \
-    syntrocam \
+    syntrolcam \
  "
 
 IMAGE_INSTALL += " \
