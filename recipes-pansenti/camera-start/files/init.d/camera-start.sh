@@ -9,7 +9,7 @@ case "$START_CAMERA" in
                 ;;
 esac
 
-if [ ! -f /usr/bin/SyntroV4LCamera ]; then
+if [ ! -f /usr/bin/SyntroCam ]; then
     exit 0
 fi
 
@@ -20,25 +20,25 @@ start_camera() {
 
     cd /home/root/syntro
 
-    /usr/bin/SyntroV4LCamera -s/home/root/syntro/SyntroV4LCamera.ini -c -d    
+    /usr/bin/SyntroCam -s/home/root/syntro/SyntroCam.ini -c -d    
 }
 
 case "$1" in
     start)
-        echo "Starting SyntroV4LCamera"
+        echo "Starting SyntroCam"
         start_camera
         ;;
 
     stop)
-        echo "Stopping SyntroV4LCamera"
-        killall SyntroV4LCamera
+        echo "Stopping SyntroCam"
+        killall SyntroCam
         ;;
 
     restart)
-        echo "Stopping SyntroV4LCamera"
-        killall SyntroV4LCamera
+        echo "Stopping SyntroCam"
+        killall SyntroCam
         sleep 3
-        echo "Starting SyntroV4LCamera"
+        echo "Starting SyntroCam"
         start_camera
         ;;
 

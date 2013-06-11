@@ -1,4 +1,4 @@
-SUMMARY = "Scripts to start SyntroV4LCamera at boot"
+SUMMARY = "Script to start SyntroCam at boot"
 
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
@@ -7,7 +7,7 @@ SRC_URI = "file://init.d/camera-start.sh \
            file://default/camera-start \
           "
 
-PR = "3"
+PR = "0"
 
 S = "${WORKDIR}"
 
