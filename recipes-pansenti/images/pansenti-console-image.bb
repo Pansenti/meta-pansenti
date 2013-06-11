@@ -8,6 +8,7 @@ CORE_OS = " \
     ntp \
     ntp-tickadj \
     task-core-ssh-openssh openssh-keygen \
+    term-prompt \
     tzdata \
  "
 
