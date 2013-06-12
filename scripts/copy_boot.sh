@@ -5,14 +5,12 @@ if [ "x${1}" = "x" ]; then
 	exit 0
 fi
 
-if [[ -z "${OETMP}" ]]; then
-	echo "Working from local directory"
+if [ -z "$OETMP" ]; then
+	echo -e "\nWorking from local directory"
 else
 	echo -e "\nOETMP: $OETMP"
 
-	if [ -d ${OETMP}/deploy/images ]; then
-		cd ${OETMP}/deploy/images
-	else
+	if [ ! -d ${OETMP}/deploy/images ]; then
 		echo "Directory not found: ${OETMP}/deploy/images"
 		exit 1
 	fi
@@ -24,6 +22,40 @@ if [[ -z "${MACHINE}" ]]; then
 	exit 1
 else
 	echo -e "MACHINE: $MACHINE\n"
+fi
+
+if [ ! -z "$OETMP" ]; then
+	cd ${OETMP}/deploy/images
+fi
+
+if [ ! -f MLO-${MACHINE} ]; then
+	echo -e "File not found: MLO-${MACHINE}\n"
+ 
+	if [ ! -z "$OETMP" ]; then
+		cd $OLDPWD
+	fi
+
+	exit 1
+fi
+
+if [ ! -f u-boot-${MACHINE}.img ]; then
+	echo -e "File not found: u-boot-${MACHINE}.img\n"
+ 
+	if [ ! -z "$OETMP" ]; then
+		cd $OLDPWD
+	fi
+
+	exit 1
+fi
+
+if [ ! -f uImage-${MACHINE}.bin ]; then
+	echo -e "File not found: uImage-${MACHINE}.bin\n"
+ 
+	if [ ! -z "$OETMP" ]; then
+		cd $OLDPWD
+	fi
+
+	exit 1
 fi
 
 DEV=/dev/${1}1
@@ -56,13 +88,12 @@ if [ -b $DEV ]; then
 	echo "Unmounting ${DEV}"
 	sudo umount ${DEV}
 else
-	echo -e "\nBlock device $DEV does not exist!\n"
+	echo -e "\nBlock device not found: $DEV\n"
 fi
 
-
-if [[ -z "${OETMP}" ]]; then
-	echo "Done"
-else
+if [ ! -z "$OETMP" ]; then
 	cd $OLDPWD
-	echo "Done"
 fi
+
+echo "Done"
+

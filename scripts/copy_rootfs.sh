@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "x${1}" = "x" ]; then
-	echo -e "\nUsage: ${0} <block device>\n"
+	echo -e "\nUsage: ${0} <block device> [ <image-type> [<hostname>] ]\n"
 	exit 0
 fi
 
@@ -11,14 +11,12 @@ else
         IMAGE=${2}
 fi
 
-if [[ -z "${OETMP}" ]]; then
-	echo "Working from local directory"
+if [ -z "$OETMP" ]; then
+	echo -e "\nWorking from local directory"
 else
 	echo -e "\nOETMP: $OETMP"
 
-	if [ -d ${OETMP}/deploy/images ]; then
-		cd ${OETMP}/deploy/images
-	else
+	if [ ! -d ${OETMP}/deploy/images ]; then
 		echo "Directory not found: ${OETMP}/deploy/images"
 		exit 1
 	fi
@@ -32,18 +30,8 @@ else
 	echo "MACHINE: $MACHINE"
 fi
 
-if [ ! -f "pansenti-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
-        echo "Root filesystem not found: pansenti-${IMAGE}-image-${MACHINE}.tar.xz"
-
-        if [[ ! -z "${OETMP}" ]]; then
-                cd $OLDPWD
-        fi
-
-        exit 1
-fi
 
 echo "IMAGE: $IMAGE"
-
 
 if [ "x${3}" = "x" ]; then
         TARGET_HOSTNAME=$MACHINE
@@ -53,6 +41,20 @@ fi
 
 echo -e "HOSTNAME: $TARGET_HOSTNAME\n"
 
+
+if [ ! -z "$OETMP" ]; then
+	cd ${OETMP}/deploy/images
+fi
+
+if [ ! -f "pansenti-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
+        echo -e "File not found: pansenti-${IMAGE}-image-${MACHINE}.tar.xz\n"
+
+		if [ ! -z "$OETMP" ]; then
+			cd $OLDPWD
+		fi
+
+        exit 1
+fi
 
 DEV=/dev/${1}2
 
@@ -76,9 +78,9 @@ else
 	echo "Block device $DEV does not exist"
 fi
 
-if [[ -z "${OETMP}" ]]; then
-	echo "Done"
-else
+if [ ! -z "$OETMP" ]; then
 	cd $OLDPWD
-	echo "Done"
 fi
+
+echo "Done"
+
