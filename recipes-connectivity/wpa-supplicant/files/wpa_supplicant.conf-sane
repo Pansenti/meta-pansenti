@@ -1,25 +1,23 @@
 ctrl_interface=/var/run/wpa_supplicant
 ctrl_interface_group=0
-
-# open
 update_config=1
+eapol_version=1
+ap_scan=1
 
+### open network
 network={
-    key_mgmt=NONE
+#       ssid="your-ssid" (optional)
+#       scan_ssid=1
+        key_mgmt=NONE
 }
 
-# wpa
-#eapol_version=1
-#ap_scan=1
-#
+
+### WPA network 
 #network={
 #     ssid="your-ssid"
-#     proto=WPA2
-#     key_mgmt=WPA-PSK
-#     pairwise=CCMP TKIP
-#     group=CCMP TKIP
 #     scan_ssid=1
+#     key_mgmt=WPA-PSK
 #     psk="your-passphrase"
-#     priority=10
 #}
+
 
