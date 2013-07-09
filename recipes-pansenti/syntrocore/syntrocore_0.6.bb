@@ -7,7 +7,7 @@ inherit qt4e
 
 DEPENDS += "pkgconfig"
 
-PR = "9"
+PR = "10"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/Syntro/SyntroCore.git"
