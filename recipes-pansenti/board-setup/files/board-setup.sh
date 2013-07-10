@@ -29,14 +29,14 @@ init_gpio() {
 
 init_adc() {
     if [ ! -d /sys/devices/ocp.2/44e0d000.tscadc ]; then
-	    echo cape-bone-iio > /sys/devices/bone_capemgr.9/slots
+	    echo cape-bone-iio > /sys/devices/bone_capemgr.8/slots
     fi
 }
 
 
 init_serial() {
     if [ ! -f /dev/ttyO1 ]; then
-        echo BB-UART1 > /sys/devices/bone_capemgr.9/slots
+        echo BB-UART1 > /sys/devices/bone_capemgr.8/slots
     fi
 }
 
