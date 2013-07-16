@@ -3,12 +3,17 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: dylan
         revision: HEAD
-        commit: e4a0a4c
+        commit: 64273e5
+
+        URI: git://git.openembedded.org/meta-openembedded
+        branch: dylan
+        revision: HEAD
+        commit: 13ae510
 
         URI: git://github.com/gumstix/meta-gumstix.git
-        branch: danny
+        branch: dylan
         revision: HEAD
-        commit: 89b2e0e
+        commit: bcd365b
 
         URI: git://github.com/beagleboard/meta-beagleboard.git
         branch: master

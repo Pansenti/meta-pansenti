@@ -8,6 +8,8 @@ BBFILES ?= ""
 BBLAYERS ?= " \
   /home/scott/poky-dylan/meta \
   /home/scott/poky-dylan/meta-yocto \
+  /home/scott/poky-dylan/meta-openembedded/meta-oe \
+  /home/scott/poky-dylan/meta-openembedded/meta-networking \
   /home/scott/poky-dylan/meta-gumstix \
   /home/scott/poky-dylan/meta-beagleboard/common-bsp \
   /home/scott/poky-dylan/meta-pansenti \

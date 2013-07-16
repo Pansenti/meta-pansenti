@@ -1,9 +1,10 @@
 # Local configuration for meta-pansenti images
 # Yocto Project 1.4 Poky distribution 9.0, [dylan] branch
 
-BBMASK = "meta-pansenti/recipes-graphics"
-BBMASK .= "|meta-pansenti/recipes-support/opencv"
-BBMASK .= "|meta-beagleboard/meta-beagleboard-extras"
+BBMASK = "meta-beagleboard/meta-beagleboard-extras"
+
+PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
+PREFERRED_PROVIDER_udev = "udev"
 
 # This is sufficient for most of our projects
 DISTRO_FEATURES = "ext2 keyboard usbhost wifi ${DISTRO_FEATURES_LIBC}"
