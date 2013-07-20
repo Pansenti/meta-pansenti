@@ -22,18 +22,21 @@ BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
 #MACHINE ?= "overo"
-# if mcbsp is required, have to use the 3.2 kernel
-#PREFERRED_VERSION_linux-gumstix = "3.2"
-#TMPDIR = "/oe16/tmp-poky-dylan-build"
+# Uncomment the following PREFERRED_VERSION line only if there is some reason
+# you need to run the 3.2 kernel on the Overo instead of the default 3.5.
+# One reason would be if you are writing a custom McBSP kernel driver. 
+#PREFERRED_VERSION_linux-gumstix_overo = "3.2"
 
 #MACHINE ?= "duovero"
-#TMPDIR = "/oe17/tmp-poky-dylan-build"
 
 MACHINE ?= "beaglebone"
 PREFERRED_PROVIDER_virtual/bootloader_beaglebone = "u-boot-denx"
-TMPDIR = "/oe18/tmp-poky-dylan-build"
 
-DL_DIR ?= "/oe-sources"
+# The default TMPDIR is */build/tmp. You can override it here.
+# TMPDIR = "/oe18/tmp-poky-dylan-build"
+
+# The default download directory is */build/sources
+# DL_DIR ?= "/oe-sources"
 
 #SSTATE_DIR ?= "${TOPDIR}/sstate-cache"
 
