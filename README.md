@@ -13,7 +13,7 @@ This layer depends on:
         URI: git://github.com/gumstix/meta-gumstix.git
         branch: dylan
         revision: HEAD
-        commit: bcd365b
+        commit: 15d9cf4
 
         URI: git://github.com/beagleboard/meta-beagleboard.git
         branch: master
