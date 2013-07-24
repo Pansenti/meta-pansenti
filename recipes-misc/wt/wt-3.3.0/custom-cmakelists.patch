@@ -1,0 +1,27 @@
+diff --git git/CMakeLists.txt git/CMakeLists.txt
+index 2f47357..b7b29fa 100644
+--- git/CMakeLists.txt
++++ git/CMakeLists.txt
+@@ -91,15 +91,15 @@ OPTION(INSTALL_EXAMPLES "Install examples (binaries and source)" OFF)
+ OPTION(INSTALL_RESOURCES "Install resources directory" ON)
+ OPTION(INSTALL_FINDWT_CMAKE_FILE "Install FindWt.cmake in systemwide cmake dir (in addition to CMAKE_INSTALL_PREFIX/cmake)" OFF)
+ OPTION(ENABLE_SSL "Enable cryptography functions, using OpenSSL" ON)
+-OPTION(ENABLE_GM "Enable GraphicsMagick, for supporting painting to raster images (PNG, GIF, ...) (WRasterImage)" ON)
+-OPTION(ENABLE_HARU "Enable Haru Free PDF Library, which is used to provide support for painting to PDF (WPdfImage)" ON)
+-OPTION(ENABLE_PANGO "Enable Pango Library, which is used for improved font support (WPdfImage and WRasterImage)" ON)
++OPTION(ENABLE_GM "Enable GraphicsMagick, for supporting painting to raster images (PNG, GIF, ...) (WRasterImage)" OFF)
++OPTION(ENABLE_HARU "Enable Haru Free PDF Library, which is used to provide support for painting to PDF (WPdfImage)" OFF)
++OPTION(ENABLE_PANGO "Enable Pango Library, which is used for improved font support (WPdfImage and WRasterImage)" OFF)
+ OPTION(ENABLE_EXT "Build Wt Ext library with JavaScript-only widgets (http://extjs.com/) DEPRECATED" OFF)
+ OPTION(ENABLE_SQLITE "Build SQLite3 backend for Wt::Dbo" ON)
+-OPTION(ENABLE_POSTGRES "Build PostgreSQL backend for Wt::Dbo" ON)
+-OPTION(ENABLE_FIREBIRD "Build FirebirdSQL backend for Wt::Dbo" ON)
+-OPTION(ENABLE_MYSQL "Build mariadb/mysql backend for Wt::Dbo" ON)
+-OPTION(ENABLE_QT4 "Build Qt4 interworking library (libwtwithqt" ON)
++OPTION(ENABLE_POSTGRES "Build PostgreSQL backend for Wt::Dbo" OFF)
++OPTION(ENABLE_FIREBIRD "Build FirebirdSQL backend for Wt::Dbo" OFF)
++OPTION(ENABLE_MYSQL "Build mariadb/mysql backend for Wt::Dbo" OFF)
++OPTION(ENABLE_QT4 "Build Qt4 interworking library (libwtwithqt" OFF)
+ OPTION(WT_NO_STD_LOCALE "Build Wt to run on a system without std::locale support" OFF)
+ OPTION(WT_NO_STD_WSTRING "Build Wt to run on a system without std::wstring support" OFF)
+ 
