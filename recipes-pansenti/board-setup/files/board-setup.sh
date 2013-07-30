@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SLOTS=`ls /sys/devices/bone_capemgr.*/slots`
+
 init_gpio() {
     # GPIO1_16 = (1 * 32) + 16 = 48
     if [ ! -d /sys/class/gpio/gpio48 ]; then
@@ -29,14 +31,14 @@ init_gpio() {
 
 init_adc() {
     if [ ! -d /sys/devices/ocp.2/44e0d000.tscadc ]; then
-	    echo cape-bone-iio > /sys/devices/bone_capemgr.8/slots
+	    echo cape-bone-iio > $SLOTS
     fi
 }
 
 
 init_serial() {
     if [ ! -f /dev/ttyO1 ]; then
-        echo BB-UART1 > /sys/devices/bone_capemgr.8/slots
+        echo BB-UART1 > $SLOTS
     fi
 }
 
