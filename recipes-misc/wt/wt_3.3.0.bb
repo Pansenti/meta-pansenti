@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-with-OpenSSL-exception;
 
 inherit cmake
 
-PR = "1"
+PR = "2"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/kdeforche/wt.git \
@@ -21,7 +21,10 @@ EXTRA_OECMAKE = "-DCMAKE_INSTALL_PREFIX=${D}${prefix}"
 do_install() {
     export INSTALL_ROOT=${D}
     make install
+
+    install -d ${D}${sysconfdir}/wt/
+    install -m 0644 ${S}/wt_config.xml ${D}${sysconfdir}/wt/
 }
 
-FILES_${PN} = "${libdir} ${bindir} ${datadir} ${prefix}"
+FILES_${PN} = "${libdir} ${bindir} ${datadir} ${prefix} ${sysconfdir}"
 
