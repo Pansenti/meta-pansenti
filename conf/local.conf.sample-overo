@@ -6,7 +6,6 @@ BBMASK = "meta-beagleboard/meta-beagleboard-extras"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "udev"
 
-# This is sufficient for most of our projects
 DISTRO_FEATURES = "ext2 keyboard usbhost wifi ${DISTRO_FEATURES_LIBC}"
 
 # Additional distro features you might want to add: 
@@ -21,16 +20,11 @@ MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-#MACHINE ?= "overo"
+MACHINE ?= "overo"
 # Uncomment the following PREFERRED_VERSION line only if there is some reason
 # you need to run the 3.2 kernel on the Overo instead of the default 3.5.
 # One reason would be if you are writing a custom McBSP kernel driver. 
 #PREFERRED_VERSION_linux-gumstix_overo = "3.2"
-
-#MACHINE ?= "duovero"
-
-MACHINE ?= "beaglebone"
-PREFERRED_PROVIDER_virtual/bootloader_beaglebone = "u-boot-denx"
 
 # The default TMPDIR is */build/tmp. You can override it here.
 # TMPDIR = "/oe18/tmp-poky-dylan-build"

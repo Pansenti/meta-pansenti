@@ -20,5 +20,15 @@ This layer depends on:
         revision: HEAD
         commit: 593a05e
 
+        URI: git://github.com/Freescale/meta-fsl-arm.git
+        branch: dylan
+        revision: HEAD
+        commit: dbf390a
+
+        URI: git://github.com/Freescale/meta-fsl-arm-extra.git
+        branch: dylan
+        revision: HEAD
+        commit: 5f5a9cf       
+
         meta-pansenti layer maintainer: Scott Ellis <scott@pansenti.com>
 
