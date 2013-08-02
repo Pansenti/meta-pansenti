@@ -9,18 +9,15 @@ PR = "0"
 
 GSTREAMER_PACKAGES = " \
     gst-fsl-plugin \
+    gst-fsl-plugin-gplay \
     gst-meta-audio \
     gst-meta-video \
     gst-plugins-good-meta \
     gpu-viv-bin-mx6q \
     gpu-viv-bin-mx6q-dev \
+    gst-plugins-base-videotestsrc \    
  "
 
-#    gst-plugins-good-udp 
-#    gst-plugins-good-rtp 
-#    gst-plugins-good-rtpmanager 
-#    gst-plugins-good-rtsp 
- 
 
 IMAGE_INSTALL += " \
     ${GSTREAMER_PACKAGES} \
