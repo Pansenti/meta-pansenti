@@ -8,6 +8,7 @@ require pansenti-wt-image.bb
 PR = "0"
 
 GSTREAMER_PACKAGES = " \
+    gst-fsl-plugin \
     gst-meta-audio \
     gst-meta-video \
     gst-plugins-good-meta \
