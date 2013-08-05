@@ -10,6 +10,8 @@ BBLAYERS ?= " \
   /home/scott/poky-dylan/meta-yocto \
   /home/scott/poky-dylan/meta-openembedded/meta-oe \
   /home/scott/poky-dylan/meta-openembedded/meta-networking \
+  /home/scott/poky-dylan/meta-fsl-arm \
+  /home/scott/poky-dylan/meta-fsl-arm-extra \
   /home/scott/poky-dylan/meta-gumstix \
   /home/scott/poky-dylan/meta-beagleboard/common-bsp \
   /home/scott/poky-dylan/meta-pansenti \
