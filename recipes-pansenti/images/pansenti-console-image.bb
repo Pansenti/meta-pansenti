@@ -120,7 +120,16 @@ set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
 }
 
+avahi_no_drop_root() {
+    sed -i -e 's/\$DAEMON -D/\$DAEMON -D --no-drop-root/' ${IMAGE_ROOTFS}/etc/init.d/avahi-daemon
+}
+
 ROOTFS_POSTPROCESS_COMMAND += "set_local_timezone ; "
+
+ROOTFS_POSTPROCESS_COMMAND_wandboard-dual += " \
+    set_local_timezone ; \
+    avahi_no_drop_root ; \
+ "
 
 
 export IMAGE_BASENAME = "pansenti-console-image"
