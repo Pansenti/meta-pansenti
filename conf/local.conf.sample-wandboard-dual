@@ -1,6 +1,8 @@
 # Local configuration for meta-pansenti images
 # Yocto Project 1.4 Poky distribution 9.0, [dylan] branch
 
+ACCEPT_FSL_EULA = "1"
+
 BBMASK = "meta-beagleboard/meta-beagleboard-extras"
 BBMASK .= "|meta-fsl-arm/recipes-graphics"
 BBMASK .= "|meta-fsl-arm/recipes-qt"
@@ -9,13 +11,14 @@ BBMASK .= "|meta-fsl-arm-extra/recipes-core"
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "udev"
 
+# This is sufficient for most of our projects
 DISTRO_FEATURES = "ext2 keyboard usbhost wifi ${DISTRO_FEATURES_LIBC}"
 
 # Additional distro features you might want to add: 
 # alsa, bluetooth, irda, nfc, nfs, pci, usbgadget, vfat, x11, zeroconf 
 
-# force this output type for all MACHINES, significantly smaller in size
-IMAGE_FSTYPES_forcevariable = "tar.xz"
+IMAGE_FSTYPES_forcevariable = "ext3 sdcard"
+SDCARD_GENERATION_COMMAND = "generate_imx_sdcard"
 
 # override the mix in the meta-gumstix/conf/machine configuration files
 MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
@@ -23,11 +26,11 @@ MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-MACHINE ?= "beaglebone"
-PREFERRED_PROVIDER_virtual/bootloader_beaglebone = "u-boot-denx"
+MACHINE ?= "wandboard-dual"
+PREFERRED_PROVIDER_virtual/bootloader = "u-boot-imx"
 
 # The default TMPDIR is */build/tmp. You can override it here.
-# TMPDIR = "/oe18/tmp-poky-dylan-build"
+# TMPDIR = "/oe7/tmp-poky-dylan-build"
 
 # The default download directory is */build/sources
 # DL_DIR ?= "/oe-sources"
