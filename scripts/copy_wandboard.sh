@@ -38,10 +38,17 @@ fi
 
 
 if [ "x${2}" = "x" ]; then
-        IMAGE=qte
+    IMAGE=wt
 else
-        IMAGE=${2}
+    IMAGE=${2}
 fi
+
+if [ "x${3}" = "x" ]; then
+	TARGET_HOSTNAME=$MACHINE
+else
+    TARGET_HOSTNAME=${3}
+fi
+
 
 if [ -z "$OETMP" ]; then
 	echo -e "\nWorking from local directory"
@@ -64,6 +71,7 @@ fi
 
 
 echo "IMAGE: $IMAGE"
+echo "HOSTNAME: $TARGET_HOSTNAME"
 
 
 if [ ! -z "$OETMP" ]; then
@@ -85,6 +93,41 @@ fi
 echo -e "\nUsing dd to copy [ pansenti-${IMAGE}-image-${MACHINE}.sdcard ] to $DEV\n"
 sudo dd if=pansenti-${IMAGE}-image-${MACHINE}.sdcard of=${DEV} bs=1M
 
+if [ $TARGET_HOSTNAME != $MACHINE ]; then
+    MORE_WORK="yes"
+elif [ -f interfaces ]; then
+    MORE_WORK="yes"
+elif [ -f wpa_supplicant.conf ]; then
+    MORE_WORK="yes"
+else
+    MORE_WORK="no"
+fi
+
+if [ $MORE_WORK = "yes" ]; then
+  
+    ROOTPART="${DEV}2"
+	echo -e "\nMounting $ROOTPART at /media/card"
+	sudo mount $ROOTPART /media/card
+
+    if [ $TARGET_HOSTNAME != $MACHINE ]; then
+	    echo "Writing hostname to /etc/hostname"
+	    export TARGET_HOSTNAME
+	    sudo -E bash -c 'echo ${TARGET_HOSTNAME} > /media/card/etc/hostname'
+    fi
+
+	if [ -f interfaces ]; then
+		echo "Writing interfaces to /media/card/etc/network/"
+		sudo cp interfaces /media/card/etc/network/interfaces
+	fi
+
+	if [ -f wpa_supplicant.conf ]; then
+		echo "Writing wpa_supplicant.conf to /media/card/etc/"
+		sudo cp wpa_supplicant.conf /media/card/etc/wpa_supplicant.conf
+	fi
+
+	echo "Unmounting $ROOTPART"
+	sudo umount $ROOTPART
+fi
 
 if [ ! -z "$OETMP" ]; then
 	cd $OLDPWD
