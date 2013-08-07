@@ -7,11 +7,12 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-with-OpenSSL-exception;
 
 inherit cmake
 
-PR = "2"
+PR = "3"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/kdeforche/wt.git \
            file://custom-cmakelists.patch \
+           file://default-log-level.patch \
           "
            
 S = "${WORKDIR}/git"

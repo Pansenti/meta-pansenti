@@ -1,0 +1,13 @@
+diff --git git/wt_config.xml.in-orig git/wt_config.xml.in
+index ab77e98..987dfe3 100644
+--- git/wt_config.xml.in-orig
++++ git/wt_config.xml.in
+@@ -259,7 +259,7 @@
+ 	   Note debugging messages are only emitted when debugging
+ 	   has been enabled while building Wt.
+ 	  -->
+-	<log-config>* -debug</log-config>
++	<log-config>* -debug -info</log-config>
+ 
+ 	<!-- Maximum HTTP request size (Kb)
+ 

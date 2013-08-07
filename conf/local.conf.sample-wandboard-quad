@@ -4,6 +4,9 @@
 ACCEPT_FSL_EULA = "1"
 
 BBMASK = "meta-beagleboard/meta-beagleboard-extras"
+BBMASK .= "|meta-fsl-arm/recipes-graphics"
+BBMASK .= "|meta-fsl-arm/recipes-qt"
+BBMASK .= "|meta-fsl-arm-extra/recipes-core"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "udev"
@@ -23,14 +26,14 @@ MACHINE_FEATURES_forcevariable = "ext2 screen serial usbhost"
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-# have not tested the wandboard-solo or wandboard-quad
-MACHINE ?= "wandboard-dual"
+MACHINE ?= "wandboard-quad"
 PREFERRED_PROVIDER_virtual/bootloader = "u-boot-imx"
 
 # The default TMPDIR is */build/tmp. You can override it here.
-# TMPDIR = "/oe7/tmp-poky-dylan-build"
+# TMPDIR = "/oe9/tmp-poky-dylan-build"
 
-DL_DIR ?= "/oe-sources"
+# The default download directory is */build/sources
+# DL_DIR ?= "/oe-sources"
 
 #SSTATE_DIR ?= "${TOPDIR}/sstate-cache"
 
