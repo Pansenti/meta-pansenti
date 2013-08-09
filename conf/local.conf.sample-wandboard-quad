@@ -4,7 +4,8 @@
 ACCEPT_FSL_EULA = "1"
 
 BBMASK = "meta-beagleboard/meta-beagleboard-extras"
-BBMASK .= "|meta-fsl-arm/recipes-graphics"
+BBMASK .= "|meta-fsl-arm/recipes-graphics/mesa"
+BBMASK .= "|meta-fsl-arm/recipes-graphics/xorg-driver"
 BBMASK .= "|meta-fsl-arm/recipes-qt"
 BBMASK .= "|meta-fsl-arm-extra/recipes-core"
 
