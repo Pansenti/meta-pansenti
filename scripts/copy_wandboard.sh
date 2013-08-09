@@ -105,9 +105,12 @@ fi
 
 if [ $MORE_WORK = "yes" ]; then
   
+    sleep 10
+
     ROOTPART="${DEV}2"
-	echo -e "\nMounting $ROOTPART at /media/card"
-	sudo mount $ROOTPART /media/card
+    
+    echo -e "\nMounting $ROOTPART at /media/card"
+    sudo mount -t ext3 $ROOTPART /media/card
 
     if [ $TARGET_HOSTNAME != $MACHINE ]; then
 	    echo "Writing hostname to /etc/hostname"
