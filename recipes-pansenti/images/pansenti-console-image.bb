@@ -121,17 +121,27 @@ set_local_timezone() {
     ln -sf /usr/share/zoneinfo/EST5EDT ${IMAGE_ROOTFS}/etc/localtime
 }
 
-#avahi_no_drop_root() {
-#    sed -i -e 's/\$DAEMON -D/\$DAEMON -D --no-drop-root/' ${IMAGE_ROOTFS}/etc/init.d/avahi-daemon
-#}
+IMAGE_FILE_BLACKLIST += " \
+    /etc/init.d/hwclock.sh \
+ "
+
+remove_blacklist_files() {
+    for i in ${IMAGE_FILE_BLACKLIST}; do
+        rm -rf ${IMAGE_ROOTFS}$i
+    done
+}
 
 ROOTFS_POSTPROCESS_COMMAND += "set_local_timezone ; "
 
-#ROOTFS_POSTPROCESS_COMMAND_wandboard-dual += "
-#    set_local_timezone ;
-#    avahi_no_drop_root ;
-# "
+ROOTFS_POSTPROCESS_COMMAND_wandboard-dual += " \
+    set_local_timezone ; \
+    remove_blacklist_files ; \
+ "
 
+ROOTFS_POSTPROCESS_COMMAND_wandboard-quad += " \
+    set_local_timezone ; \
+    remove_blacklist_files ; \
+ "
 
 export IMAGE_BASENAME = "pansenti-console-image"
 
