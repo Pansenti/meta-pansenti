@@ -46,6 +46,12 @@ if [ ! -z "$OETMP" ]; then
 	cd ${OETMP}/deploy/images
 fi
 
+# to work around an issue with the VPU codec
+if [ "${MACHINE}" = "wandboard-dual" ]; then
+	echo -e "\nUsing wandboard-quad root fs for wandboard-dual\n"
+	MACHINE="wandboard-quad"
+fi
+
 if [ ! -f "pansenti-${IMAGE}-image-${MACHINE}.tar.xz" ]; then
         echo -e "File not found: pansenti-${IMAGE}-image-${MACHINE}.tar.xz\n"
 
@@ -65,7 +71,7 @@ if [ -b $DEV ]; then
 	echo "Mounting $DEV"
 	sudo mount $DEV /media/card
 
-	echo "Untar'ing rootfs to /media/card"
+	echo "Extracting pansenti-${IMAGE}-image-${MACHINE}.tar.xz to /media/card"
 	sudo tar -C /media/card -xJf pansenti-${IMAGE}-image-${MACHINE}.tar.xz
 
 	echo "Writing hostname to /etc/hostname"
