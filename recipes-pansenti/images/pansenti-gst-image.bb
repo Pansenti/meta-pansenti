@@ -18,9 +18,15 @@ GSTREAMER_PACKAGES = " \
     gst-plugins-base-videotestsrc \    
  "
 
+# install vpu firmware for both dual and quad boards on all images
+VPU_FIRMWARE = " \
+    firmware-imx-vpu-imx6d \
+    firmware-imx-vpu-imx6q \
+ "
 
 IMAGE_INSTALL += " \
     ${GSTREAMER_PACKAGES} \
+    ${VPU_FIRMWARE} \
     v4l-utils \
  "
 
