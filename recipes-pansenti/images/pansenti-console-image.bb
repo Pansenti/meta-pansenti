@@ -80,6 +80,7 @@ EXTRA_TOOLS_INSTALL = " \
     ethtool \
     findutils \
     i2c-tools \
+    iftop \
     iperf \
     htop \
     less \
