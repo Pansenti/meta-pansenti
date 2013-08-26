@@ -5,6 +5,7 @@ BBMASK = "meta-beagleboard/meta-beagleboard-extras"
 BBMASK .= "|meta-fsl-arm/recipes-graphics"
 BBMASK .= "|meta-fsl-arm/recipes-qt"
 BBMASK .= "|meta-fsl-arm-extra/recipes-core"
+BBMASK .= "|meta-gumstix/recipes-connectivity"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "udev"
