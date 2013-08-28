@@ -32,3 +32,7 @@ This layer depends on:
 
         meta-pansenti layer maintainer: Scott Ellis <scott@pansenti.com>
 
+
+Some notes on using this layer - [Building small board systems with the Yocto Project][1]
+
+[1]: http://www.jumpnowtek.com		"Jumpnowtek"
