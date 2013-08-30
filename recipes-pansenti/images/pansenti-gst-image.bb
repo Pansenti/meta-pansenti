@@ -12,16 +12,26 @@ GSTREAMER_PACKAGES = " \
     gst-fsl-plugin-gplay \
     gst-meta-audio \
     gst-meta-video \
+    gst-plugins-base-videotestsrc \
     gst-plugins-good-meta \
-    gpu-viv-bin-mx6q \
-    gpu-viv-bin-mx6q-dev \
-    gst-plugins-base-videotestsrc \    
+    gst-plugins-good-dev \
+    gst-plugins-bad-meta \
+    gst-plugins-bad-dev \
+	gst-meta-base \
+	gstreamer \
+	gstreamer-dev \
+	gst-plugins-base-app \
+    gst-plugins-base-app-dev \
+	gst-plugins-base-meta \
+    gst-plugins-base-dev \
  "
 
 # install vpu firmware for both dual and quad boards on all images
 VPU_FIRMWARE = " \
     firmware-imx-vpu-imx6d \
     firmware-imx-vpu-imx6q \
+    gpu-viv-bin-mx6q \
+    gpu-viv-bin-mx6q-dev \
  "
 
 IMAGE_INSTALL += " \
