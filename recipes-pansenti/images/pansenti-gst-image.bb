@@ -10,28 +10,29 @@ PR = "0"
 GSTREAMER_PACKAGES = " \
     gst-fsl-plugin \
     gst-fsl-plugin-gplay \
+    gst-meta-base \
     gst-meta-audio \
     gst-meta-video \
-    gst-plugins-base-videotestsrc \
+    gst-meta-debug \
+    gst-plugins-base-meta \
+    gst-plugins-base-dev \
     gst-plugins-good-meta \
     gst-plugins-good-dev \
     gst-plugins-bad-meta \
     gst-plugins-bad-dev \
-	gst-meta-base \
-	gstreamer \
-	gstreamer-dev \
-	gst-plugins-base-app \
-    gst-plugins-base-app-dev \
-	gst-plugins-base-meta \
-    gst-plugins-base-dev \
+    gstreamer \
+    gstreamer-dev \
+ "
+
+VIVANTE_SAMPLE_CODE = " \
+    gpu-viv-bin-mx6q \
+    gpu-viv-bin-mx6q-dev \
  "
 
 # install vpu firmware for both dual and quad boards on all images
 VPU_FIRMWARE = " \
     firmware-imx-vpu-imx6d \
     firmware-imx-vpu-imx6q \
-    gpu-viv-bin-mx6q \
-    gpu-viv-bin-mx6q-dev \
  "
 
 IMAGE_INSTALL += " \
