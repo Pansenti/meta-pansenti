@@ -24,6 +24,11 @@ GSTREAMER_PACKAGES = " \
     gstreamer-dev \
  "
 
+AV_EXTRA = " \
+    libav \
+    libvpx \
+ "
+
 VIVANTE_SAMPLE_CODE = " \
     gpu-viv-bin-mx6q \
     gpu-viv-bin-mx6q-dev \
@@ -38,7 +43,7 @@ VPU_FIRMWARE = " \
 IMAGE_INSTALL += " \
     ${GSTREAMER_PACKAGES} \
     ${VPU_FIRMWARE} \
-    v4l-utils \
+    ${AV_EXTRA} \
  "
 
 export IMAGE_BASENAME = "pansenti-gst-image"
