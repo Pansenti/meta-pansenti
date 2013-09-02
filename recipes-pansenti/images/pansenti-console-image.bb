@@ -88,6 +88,7 @@ EXTRA_TOOLS_INSTALL = " \
     sysfsutils \
     tcpdump \
     unzip \
+    v4l-utils \
     wget \
     zip \
  "
