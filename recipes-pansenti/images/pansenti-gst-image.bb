@@ -26,7 +26,9 @@ GSTREAMER_PACKAGES = " \
 
 AV_EXTRA = " \
     libav \
+    libav-dev \
     libvpx \
+    libvpx-dev \
  "
 
 VIVANTE_SAMPLE_CODE = " \
