@@ -7,7 +7,7 @@ inherit qt4e pkgconfig
 
 DEPENDS += "syntrocore"
 
-PR = "2"
+PR = "3"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/Syntro/SyntroLCam.git"
