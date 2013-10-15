@@ -8,7 +8,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 
 SRC_URI = "file://board-setup.sh"
 
-PR = "1"
+PR = "2"
 
 S = "${WORKDIR}"
 

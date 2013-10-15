@@ -30,7 +30,7 @@ init_gpio() {
 
 
 init_adc() {
-    if [ ! -d /sys/devices/ocp.2/44e0d000.tscadc ]; then
+    if [ ! -d /sys/devices/ocp.3/44e0d000.tscadc ]; then
 	    echo cape-bone-iio > $SLOTS
     fi
 }
