@@ -11,25 +11,26 @@ else
         IMAGE=${2}
 fi
 
-if [ -z "$OETMP" ]; then
-	echo -e "\nWorking from local directory"
-else
-	echo -e "\nOETMP: $OETMP"
-
-	if [ ! -d ${OETMP}/deploy/images ]; then
-		echo "Directory not found: ${OETMP}/deploy/images"
-		exit 1
-	fi
-fi 
-
 if [[ -z "${MACHINE}" ]]; then
 	echo "Environment variable MACHINE not found!"
-	echo "Choices are overo|duovero|beaglebone"
+	echo "Choices are overo|duovero|beaglebone|wandboard-quad|wandboard-dual"
 	exit 1
 else
 	echo "MACHINE: $MACHINE"
 fi
 
+if [ -z "$OETMP" ]; then
+	echo -e "\nWorking from local directory"
+else
+	echo -e "\nOETMP: $OETMP"
+
+	if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
+		echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
+		exit 1
+	fi
+
+	cd ${OETMP}/deploy/images/${MACHINE}
+fi 
 
 echo "IMAGE: $IMAGE"
 
@@ -41,10 +42,6 @@ fi
 
 echo -e "HOSTNAME: $TARGET_HOSTNAME\n"
 
-
-if [ ! -z "$OETMP" ]; then
-	cd ${OETMP}/deploy/images
-fi
 
 # to work around an issue with the VPU codec
 if [ "${MACHINE}" = "wandboard-dual" ]; then

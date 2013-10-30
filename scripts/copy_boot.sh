@@ -5,17 +5,6 @@ if [ "x${1}" = "x" ]; then
 	exit 0
 fi
 
-if [ -z "$OETMP" ]; then
-	echo -e "\nWorking from local directory"
-else
-	echo -e "\nOETMP: $OETMP"
-
-	if [ ! -d ${OETMP}/deploy/images ]; then
-		echo "Directory not found: ${OETMP}/deploy/images"
-		exit 1
-	fi
-fi 
-
 if [[ -z "${MACHINE}" ]]; then
 	echo "Environment variable MACHINE not found!"
 	echo "Choices are overo|duovero|beaglebone"
@@ -24,8 +13,17 @@ else
 	echo -e "MACHINE: $MACHINE\n"
 fi
 
-if [ ! -z "$OETMP" ]; then
-	cd ${OETMP}/deploy/images
+if [ -z "$OETMP" ]; then
+	echo -e "\nWorking from local directory"
+else
+	echo -e "\nOETMP: $OETMP"
+
+	if [ ! -d ${OETMP}/deploy/images/${MACHINE} ]; then
+		echo "Directory not found: ${OETMP}/deploy/images/${MACHINE}"
+		exit 1
+	fi
+
+	cd ${OETMP}/deploy/images/${MACHINE}
 fi
 
 if [ ! -f MLO-${MACHINE} ]; then

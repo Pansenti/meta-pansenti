@@ -37,7 +37,6 @@ WIFI_SUPPORT = " \
  "
 
 WIFI_SUPPORT_duovero = " \
-    linux-firmware-sd8787 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
@@ -88,7 +87,6 @@ EXTRA_TOOLS_INSTALL = " \
     sysfsutils \
     tcpdump \
     unzip \
-    v4l-utils \
     wget \
     zip \
  "

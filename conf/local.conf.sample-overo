@@ -6,6 +6,7 @@ BBMASK .= "|meta-fsl-arm/recipes-graphics"
 BBMASK .= "|meta-fsl-arm/recipes-qt"
 BBMASK .= "|meta-fsl-arm-extra/recipes-core"
 BBMASK .= "|meta-gumstix/recipes-connectivity"
+BBMASK .= "|meta-gumstix/recipes-kernel/linux-firmware"
 
 PREFERRED_PROVIDER_jpeg = "libjpeg-turbo"
 PREFERRED_PROVIDER_udev = "udev"
@@ -31,7 +32,7 @@ MACHINE ?= "overo"
 #PREFERRED_VERSION_linux-gumstix_overo = "3.2"
 
 # The default TMPDIR is */build/tmp. You can override it here.
-# TMPDIR = "/oe18/tmp-poky-dylan-build"
+# TMPDIR = "/oe18/tmp-poky-dora-build"
 
 # The default download directory is */build/sources
 # DL_DIR ?= "/oe-sources"

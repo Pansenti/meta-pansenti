@@ -6,19 +6,19 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  /home/scott/poky-dylan/meta \
-  /home/scott/poky-dylan/meta-yocto \
-  /home/scott/poky-dylan/meta-openembedded/meta-oe \
-  /home/scott/poky-dylan/meta-openembedded/meta-networking \
-  /home/scott/poky-dylan/meta-fsl-arm \
-  /home/scott/poky-dylan/meta-fsl-arm-extra \
-  /home/scott/poky-dylan/meta-gumstix \
-  /home/scott/poky-dylan/meta-beagleboard/common-bsp \
-  /home/scott/poky-dylan/meta-pansenti \
+  /home/scott/poky-dora/meta \
+  /home/scott/poky-dora/meta-yocto \
+  /home/scott/poky-dora/meta-openembedded/meta-oe \
+  /home/scott/poky-dora/meta-openembedded/meta-networking \
+  /home/scott/poky-dora/meta-fsl-arm \
+  /home/scott/poky-dora/meta-fsl-arm-extra \
+  /home/scott/poky-dora/meta-gumstix \
+  /home/scott/poky-dora/meta-beagleboard/common-bsp \
+  /home/scott/poky-dora/meta-pansenti \
   "
 
 BBLAYERS_NON_REMOVABLE ?= " \
-  /home/scott/poky-dylan/meta \
-  /home/scott/poky-dylan/meta-yocto \
+  /home/scott/poky-dora/meta \
+  /home/scott/poky-dora/meta-yocto \
   "
 
