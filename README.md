@@ -1,14 +1,14 @@
 This layer depends on:
 
         URI: git://git.yoctoproject.org/poky.git
-        branch: dylan
+        branch: dora
         revision: HEAD
-        commit: 560fa9a
+        commit: faf8f86
 
         URI: git://git.openembedded.org/meta-openembedded
-        branch: dylan
+        branch: dora
         revision: HEAD
-        commit: 81bf02c
+        commit: 513e7ca
 
         URI: git://github.com/gumstix/meta-gumstix.git
         branch: dylan
@@ -23,12 +23,12 @@ This layer depends on:
         URI: git://github.com/Freescale/meta-fsl-arm.git
         branch: master
         revision: HEAD
-        commit: 7fd5374
+        commit: 7a01aff
 
         URI: git://github.com/Freescale/meta-fsl-arm-extra.git
         branch: master
         revision: HEAD
-        commit: cc64dc7       
+        commit: b17d250       
 
         meta-pansenti layer maintainer: Scott Ellis <scott@pansenti.com>
 
