@@ -7,7 +7,7 @@ CORE_OS = " \
     busybox-hwclock \
     ntp \
     ntp-tickadj \
-    task-core-ssh-openssh openssh-keygen \
+    task-core-ssh-openssh openssh-keygen openssh-sftp-server \
     term-prompt \
     tzdata \
  "
