@@ -17,10 +17,10 @@ PSPLASH = "psplash"
 PSPLASH_overo = ""
 
 SYNTRO = " \
-    camera \
     syntrocore \
     syntrocore-dev \
     syntrolcam \
+    syntrolcam-init \
  "
 
 IMAGE_INSTALL += " \
