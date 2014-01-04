@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-with-OpenSSL-exception;
 
 inherit cmake
 
-PR = "3"
+PR = "4"
 
 SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/kdeforche/wt.git \
