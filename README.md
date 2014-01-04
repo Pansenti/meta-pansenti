@@ -3,7 +3,7 @@ This layer depends on:
         URI: git://git.yoctoproject.org/poky.git
         branch: dylan
         revision: HEAD
-        commit: 57e6d53 
+        commit: eb3598d 
 
         URI: git://git.openembedded.org/meta-openembedded
         branch: dylan
@@ -23,7 +23,7 @@ This layer depends on:
         URI: git://github.com/Freescale/meta-fsl-arm.git
         branch: master
         revision: HEAD
-        commit: b04357d 
+        commit: 82907f6 
 
         URI: git://github.com/Freescale/meta-fsl-arm-extra.git
         branch: master
