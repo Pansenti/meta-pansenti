@@ -26,6 +26,8 @@ KERNEL_MODULES_OOT_overo = " \
 KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
     ${KERNEL_MODULES_OOT} \
+    oprofile \
+    perf \
  "
 
 WIFI_SUPPORT = " \
@@ -85,6 +87,7 @@ EXTRA_TOOLS_INSTALL = " \
     htop \
     less \
     nano \
+    procps \
     sysfsutils \
     tcpdump \
     unzip \
