@@ -26,8 +26,6 @@ KERNEL_MODULES_OOT_overo = " \
 KERNEL_EXTRA_INSTALL = " \
     kernel-modules \
     ${KERNEL_MODULES_OOT} \
-    oprofile \
-    perf \
  "
 
 WIFI_SUPPORT = " \
