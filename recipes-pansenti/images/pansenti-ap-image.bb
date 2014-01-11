@@ -8,11 +8,11 @@ require pansenti-console-image.bb
 PR = "0"
 
 AP_SUPPORT = " \
+    bridge-utils \
     dhcp-server \
     dhcp-server-config \
     hostap-daemon \
     iptables \
-    iw \
  "
 
 IMAGE_INSTALL += " \
