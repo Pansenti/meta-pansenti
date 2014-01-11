@@ -34,23 +34,28 @@ WIFI_SUPPORT = " \
     linux-firmware-rtl8192su \
     linux-firmware-wl12xx \
     wpa-supplicant \
+    iw \
  "
 
 WIFI_SUPPORT_duovero = " \
+    linux-firmware-ralink \
     linux-firmware-sd8787 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-wl12xx \
     wpa-supplicant \
+    iw \
  "
 
 WIFI_SUPPORT_overo = " \
+    linux-firmware-ralink \
     linux-firmware-sd8686 \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-wl12xx \
     wpa-supplicant \
+    iw \
  "
 
 DEV_SDK_INSTALL = " \
@@ -77,6 +82,7 @@ DEV_SDK_INSTALL = " \
 
 EXTRA_TOOLS_INSTALL = " \
     bzip2 \
+    devmem2 \
     ethtool \
     findutils \
     i2c-tools \
